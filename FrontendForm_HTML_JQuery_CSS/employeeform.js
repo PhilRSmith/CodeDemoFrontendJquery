@@ -1,17 +1,38 @@
-$(document).ready (function(){
+$(document).ready(function(){
+    
+    /*InputMask Library functions by Josh Bush */
+    var phoneMasks = [{ "mask": "(###) ###-####"}, { "mask": "(###) ###-##############"}]; 
+    var zipcodeMask = [{"mask" : "#####"}];
+    $('#phoneNumber').inputmask({ 
+        mask: phoneMasks, 
+        greedy: false, 
+        definitions: { '#': { validator: "[0-9]", cardinality: 1}}
+    });
+    $('#zipCode').inputmask({ 
+        mask: zipcodeMask, 
+        greedy: false, 
+        definitions: { '#': { validator: "[0-9]", cardinality: 1}}
+    });
+
     $("#submit").click(function(){
-        var empName = $('#employeeName').val();
-        var empNumber = $('#employeeNumber').val();
-        var phoneNumber = $('#phoneNumber').val();
+        var inputEmpName = $('#employeeName').val();
+        var inputEmpNumber = $('#employeeNumber').val();
+        var inputPhoneNumber = $('#phoneNumber').val();
+        var inputState = $('#state').val();
+        var inputZipCode = $('#zipCode').val();
+        var inputStreetAddress = $('#address').val(); 
+        var inputCity = $('#city').val();
+        var isEmployee = $('#isEmployee').is(':checked')
         $("#returnmessage").empty(); //clear server response message
-        $("#returnmessage").append(empName + " : " , empNumber + " : ", phoneNumber); /*Just a test of input fields*/
+        $("#returnmessage").append(inputEmpName + " : " , inputEmpNumber + " : ", inputPhoneNumber); /*Just a test of input fields*/
         $.ajax({
             type: "POST",
-            url: "fictitious ",
+            url: "https://fictitious.notreal",
             data: {
-                employeeName : empName , 
-                employeeNumber : empNumber ,
-                phone : phoneNumber
+                employeeName : inputEmpName , 
+                employeeNumber : inputEmpNumber ,
+                phone : inputPhoneNumber,
+                zipCode : inputZipCode
             },
             dataType: "json"
         },function(res){

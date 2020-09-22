@@ -1,0 +1,85 @@
+#employeeFormContainer{
+    width:50%;
+    margin:20px auto;
+    padding-top:20px;
+    font-family: 'Arial', Sans-serif;
+}
+#employeeForm{
+    border-radius:15px; /*Rounded corners*/
+    padding:30px 15px;
+    box-shadow:0 0 5px; /*centered balanced shadow*/
+    font-size:14px;
+    font-weight:bold;
+    width:480px;
+    float:left;
+}
+select{ /*Default select styling*/
+    width:100%;
+    height:35px;
+    margin-top:5px;
+    border:2px solid #999;
+    border-radius:3px;
+    padding:1px;
+}
+select[id=state]{
+    width:80%;
+    height:40px;
+    margin-top:5px;
+    border:2px solid #999;
+    border-radius:3px;
+    padding:1px;
+}
+input{ /*Default input styling*/
+    width:100%;
+    height:35px;
+    margin-top:5px;
+    border:2px solid #999;
+    border-radius:3px;
+    padding:1px;
+}
+input[id=phoneNumber]{
+    width:80%;
+    height:35px;
+    margin-top:5px;
+    border:2px solid #999;
+    border-radius:3px;
+    padding:1px;
+}
+input[id=zipCode]{
+    width:80%;
+    height:35px;
+    margin-top:5px;
+    border:2px solid #999;
+    border-radius:3px;
+    padding:1px;
+}
+
+input[type=button]{
+    background-color:#3c88d4;
+    border:2px solid rgb(110, 110, 110);
+    font-family: 'Arial', Sans-serif;
+    font-Weight:bold;
+    font-size:18px;
+    color:rgb(255, 255, 255);
+}
+input[type=checkbox]{
+    position: relative;
+    top:0;
+    left:30px;
+    height: 12px;
+    width: 12px;
+}
+#returnmessage{
+    font-size:16px;
+    color:rgb(214, 8, 8);
+    text-align:center;
+}
+.column3{
+    float:left;
+    width: 33%;
+}
+.row:after{
+    content: "";
+    display: table;
+    clear: both;
+}
