@@ -9,8 +9,19 @@
         <script src = "employeeform.js"></script>
     </head>
     <body>
-        <div id = "container">
-            <div id="employeeForm"></div>
+        <div id = "employeeFormContainer">
+            <form id = "employeeForm">
+                <h2>Please enter the desired information</h2>
+                <p id="returnmessage"> </p>
+                <label>Employee Name: </label>
+                <input type = "text" id = "employeeName" placeholder = "Your Name"/>
+                <label>Employee Number: </label>
+                <input type = "text" id = "employeeNumber" placeholder = "Employee Number"/>
+                <label>Phone Number: </label>
+                <input type = "text" id = "phoneNumber" placeholder = "Your phone number"/>
+
+                <input type = "button" id = "submit" value = "submit info"/>
+            </form>
         </div>
     </body>
 </html>
