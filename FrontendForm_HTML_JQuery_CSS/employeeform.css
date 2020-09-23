@@ -1,5 +1,5 @@
 #employeeFormContainer{
-    width:50%;
+    width:80%;
     margin:20px auto;
     padding-top:20px;
     font-family: 'Arial', Sans-serif;
@@ -10,10 +10,10 @@
     box-shadow:0 0 5px; /*centered balanced shadow*/
     font-size:14px;
     font-weight:bold;
-    width:480px;
+    width:720px;
     float:left;
 }
-select{ /*Default select styling*/
+datalist{ /*Default select styling*/
     width:100%;
     height:35px;
     margin-top:5px;
@@ -21,7 +21,7 @@ select{ /*Default select styling*/
     border-radius:3px;
     padding:1px;
 }
-select[id=state]{
+datalist[id=state]{
     width:80%;
     height:40px;
     margin-top:5px;
@@ -38,6 +38,14 @@ input{ /*Default input styling*/
     padding:1px;
 }
 input[id=phoneNumber]{
+    width:80%;
+    height:35px;
+    margin-top:5px;
+    border:2px solid #999;
+    border-radius:3px;
+    padding:1px;
+}
+input[list=state]{
     width:80%;
     height:35px;
     margin-top:5px;

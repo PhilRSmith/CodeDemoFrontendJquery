@@ -14,6 +14,7 @@ $(document).ready(function(){
         definitions: { '#': { validator: "[0-9]", cardinality: 1}}
     });
 
+    /*On clicking submit, send post req to server with form information, then return server success/error msg*/
     $("#submit").click(function(){
         var inputEmpName = $('#employeeName').val();
         var inputEmpNumber = $('#employeeNumber').val();
@@ -28,18 +29,26 @@ $(document).ready(function(){
         $.ajax({
             type: "POST",
             url: "https://fictitious.notreal",
-            data: {
-                employeeName : inputEmpName , 
-                employeeNumber : inputEmpNumber ,
-                phone : inputPhoneNumber,
-                zipCode : inputZipCode
+            data: JSON.stringify({
+                'employeeName' : inputEmpName , 
+                'employeeNumber' : inputEmpNumber ,
+                'phone' : inputPhoneNumber,
+                'zipCode' : inputZipCode,
+                'state' : inputState,
+                'address' : inputStreetAddress,
+                'city' : inputCity,
+                'isEmployee' : isEmployee
+            }),
+            dataType: "json",
+            success: function(data, status){
+                $('#returnmessage').append(JSON.stringify(data));
+                console.log(status);
             },
-            dataType: "json"
-        },function(res){
-            /*On success, returns a success message into #returnmessage from the server, since server doesn't exist, this won't happen*/
-            $("#returnmessage").append(res);
-        }
-        )
+            error: function (error, status){
+                console.log(error);
+                console.log(status);
+            }
+        })
     })
 })
 
