@@ -24,13 +24,13 @@ $(document).ready(function(){
         var inputEmpName = $('#employeeName').val();
         var inputEmpNumber = $('#employeeNumber').val();
         var inputPhoneNumber = $('#phoneNumber').val();
-        //var inputState = $('#state').val();
+        /*var inputState = $('#state').val(); //Handled in .on function for input of state*/
         var inputZipCode = $('#zipCode').val();
         var inputStreetAddress = $('#address').val(); 
         var inputCity = $('#city').val();
         var isEmployee = $('#isEmployee').is(':checked');
 
-        $("#returnmessage").empty(); //clear server response message
+        $("#returnmessage").empty(); //clear server response messages
         $("#errormessage").empty();
         if(inputEmpName=='' || inputEmpNumber =='' || inputPhoneNumber =='' || inputState=='' 
         ||inputZipCode==''||inputStreetAddress==''||inputCity==''){
@@ -39,8 +39,8 @@ $(document).ready(function(){
         else {
             //$('#returnmessage').append(inputEmpName + ' | ' ,inputEmpNumber + ' | ' , inputPhoneNumber + ' | ' ,inputState + ' | ' ,inputZipCode + ' | ' ,inputStreetAddress + ' | ' ,inputCity + ' | ' ,isEmployee)
             $.ajax({
-                type: "POST",
-                url: "https://fictitious.notreal",
+                type: "GET",
+                url: "notreal.com/employee-information/",
                 data: JSON.stringify({
                     'employeeName' : inputEmpName , 
                     'employeeNumber' : inputEmpNumber ,
@@ -52,11 +52,12 @@ $(document).ready(function(){
                     'isEmployee' : isEmployee
                 }),
                 dataType: "json",
-                success: function(data, status){
-                    $('#returnmessage').append(JSON.stringify(data));
+                success: function(res, status){
+                    $('#returnmessage').append(JSON.stringify(res));
                     console.log(status);
                 },
                 error: function (error, status){
+                    $('#errormessage').append(JSON.stringify(error));
                     console.log(error);
                     console.log(status);
                 }
