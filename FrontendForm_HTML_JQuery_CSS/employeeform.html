@@ -12,28 +12,28 @@
     <body>
         <div id = "employeeFormContainer">
             <form id = "employeeForm">
-                <h2>Please enter the desired information</h2>
+                <h2 id='formHeader'>Please enter the desired information</h2>
                 <p id="returnmessage"> </p>
-                
+                <p id="errormessage"></p>
                 <label>Employee Name: </label>
-                <input type = "text" id = "employeeName" placeholder = "Your Name"/>
+                <input type = "text" id = "employeeName" placeholder = "Your Name" required />
                 <br></br>
                 
                 <label>Employee Number (N/A if not applicable): </label>
-                <input type = "text" id = "employeeNumber" placeholder = "Employee Number"/>
+                <input type = "text" id = "employeeNumber" placeholder = "Employee Number" required/>
                 <br></br>
                 
                 <div class="row">
                     <div class="column3">
                         <label>Phone Number: </label>
                         <br></br>
-                        <input type = "text" id = "phoneNumber" placeholder = "Your phone number"/>
+                        <input type = "text" id = "phoneNumber" placeholder = "Your Phone Number" required/>
                     </div>
                     <div class="column3">
                         <label>State: </label>
                         <br></br>
-                        <input type="text" list = "state" name = "State of Residence">
-                        <datalist id = "state">
+                        <input type="text" list = "state" name = "state" placeholder="State of Residence" >
+                        <datalist id = "state" >
                             <option value = "Arizona" >Arizona</option>
                             <option value = "California" >California</option>
                             <option value = "Massachusetts" >Massachusetts</option>
@@ -43,18 +43,18 @@
                     <div class="column3">
                         <label>Zipcode: </label>
                         <br></br>
-                        <input type = "text" id = "zipCode" placeholder = "Your zipcode"/>
+                        <input type = "text" id = "zipCode" placeholder = "Your Zipcode" required/>
                     </div>
                     
                 </div>
                 <br></br>
                 
                 <label>Street Address: </label>
-                <input type = "text" id = "address" placeholder = "Your Address"/>
+                <input type = "text" id = "address" placeholder = "Your Address" required/>
                 <br></br>
                 
                 <label>City: </label>
-                <input type = "text" id = "city" placeholder = "City of Residence"/>
+                <input type = "text" id = "city" placeholder = "City of Residence" required/>
                 <br></br>
 
                 <label>Are you a current employee?</label>

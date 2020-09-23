@@ -79,8 +79,20 @@ input[type=checkbox]{
 }
 #returnmessage{
     font-size:16px;
+    color:rgb(28, 180, 8);
+    text-align:center;
+}
+#errormessage{
+    font-size:16px;
     color:rgb(214, 8, 8);
     text-align:center;
+}
+h2[id=formHeader]{
+    font-size:24px;
+    font-family: 'Arial', Sans-serif;
+    font-Weight:bold;
+    text-align:center;
+
 }
 .column3{
     float:left;
