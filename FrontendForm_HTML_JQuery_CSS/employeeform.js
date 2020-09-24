@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    var inputState='';
+    var inputState=''; //declared for input listener
     /*InputMask Library functions by Josh Bush */
     var phoneMasks = [{ "mask": "(###) ###-####"}, { "mask": "(###) ###-##############"}]; 
     var zipcodeMask = [{"mask" : "#####"}];
@@ -24,7 +24,7 @@ $(document).ready(function(){
         var inputEmpName = $('#employeeName').val();
         var inputEmpNumber = $('#employeeNumber').val();
         var inputPhoneNumber = $('#phoneNumber').val();
-        /*var inputState = $('#state').val(); //Handled in .on function for input of state*/
+        /*var inputState handled in .on function for input of state*/
         var inputZipCode = $('#zipCode').val();
         var inputStreetAddress = $('#address').val(); 
         var inputCity = $('#city').val();
@@ -37,10 +37,9 @@ $(document).ready(function(){
             $('#errormessage').append('Please enter your information for all fields before submitting');
         }
         else {
-            //$('#returnmessage').append(inputEmpName + ' | ' ,inputEmpNumber + ' | ' , inputPhoneNumber + ' | ' ,inputState + ' | ' ,inputZipCode + ' | ' ,inputStreetAddress + ' | ' ,inputCity + ' | ' ,isEmployee)
             $.ajax({
-                type: "GET",
-                url: "notreal.com/employee-information/",
+                type: "POST", 
+                url: "notreal.com/api/employee",
                 data: JSON.stringify({
                     'employeeName' : inputEmpName , 
                     'employeeNumber' : inputEmpNumber ,
@@ -53,11 +52,11 @@ $(document).ready(function(){
                 }),
                 dataType: "json",
                 success: function(res, status){
-                    $('#returnmessage').append(JSON.stringify(res));
+                    $('#returnmessage').append(JSON.stringify(res)); //displays green message with server success response
                     console.log(status);
                 },
                 error: function (error, status){
-                    $('#errormessage').append(JSON.stringify(error));
+                    $('#errormessage').append(JSON.stringify(error)); //displays red message with server error response
                     console.log(error);
                     console.log(status);
                 }
