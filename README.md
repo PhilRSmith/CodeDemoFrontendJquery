@@ -5,4 +5,4 @@
 - Uses Jquery for scripting and css for styling.
 
 ### Visual appearance
-![Employee Form](https://i.imgur.com/fKT2dUP.png)
+![Employee Form](https://puu.sh/GvWxS/8d6b972a44.png)
